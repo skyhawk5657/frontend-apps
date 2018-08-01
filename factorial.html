@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Factorial Calculation: n!</title>
+</head>
+<body>
+
+	<h1>Factorial Calculation: n!</h1>
+
+	<input type="number" id="user_input" name="user_input" placeholder="Enter an Integer..." min="1" step="1">
+	<input type="button" value="Calculate" onclick="factorial(document.getElementById('user_input').value);">
+
+	<p id="result">n! = ...</p>
+	<p id="warning"></p>
+
+	<script src="factorial.js"></script>
+
+</body>
+</html>
