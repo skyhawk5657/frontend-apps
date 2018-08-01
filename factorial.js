@@ -9,11 +9,20 @@ function factorial(num) {
 		result *= i;
 	}
 	resultFormatted = result.toLocaleString();
+	result2 = numberWithCommas(result);
 	console.log('Result: ' + resultFormatted);
+	console.log('Result2: ' + result2);
 	var toDisplay = num + '! = ' + resultFormatted;
+	if (num > 21) {
+		toDisplay += ' or <br />' + num + '! = ' + result2;
+	}
 	document.getElementById("result").innerHTML=toDisplay;
 
 	if ( result > Number.MAX_SAFE_INTEGER ) {
 		document.getElementById("warning").innerHTML="This value is higher than JavaScript Max Safe Integer!<br />The highest Factorial number in Safe Integer range is smaller than 18.";
 	}
+}
+
+const numberWithCommas = (x) => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
